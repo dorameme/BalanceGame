@@ -1,7 +1,6 @@
 # BalanceGame
 ## 제가 좋아하는 밸런스게임을 여러분도 같이해요
-[![Hits](https://hits.seeyoufarm.com/api/count/incr/badge.svg?url=https%3A%2F%2Fgithub.com%2Fgjbae1212%2Fhit-counter&count_bg=%23000000&title_bg=%23FF0000&icon=&icon_color=%23111010&title=hits&edge_flat=false)](https://hits.seeyoufarm.com)
-
+[![Hits](https://hits.seeyoufarm.com/api/count/incr/badge.svg?url=https%3A%2F%2Fgithub.com%2Fdorameme%2FBalanceGame&count_bg=%23000000&title_bg=%23FF0000&icon=&icon_color=%23FFFDFD&title=hits&edge_flat=false)](https://hits.seeyoufarm.com)
 개발기간: 2023-9-12 ~ 현재     
 배포주소:
 
