@@ -1,4 +1,4 @@
-package kimyunsoo.balancegame.user.dto;
+package kimyunsoo.balancegame.user;
 
 import jakarta.persistence.*;
 

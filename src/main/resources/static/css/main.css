@@ -1,0 +1,291 @@
+@import url("https://fonts.googleapis.com/css?family=Poppins:200,300,400,500,600,700,800,900&display=swap");
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    text-align: center;
+    padding: 100px;
+    background: whitesmoke;
+    display: table-cell;
+}
+
+button {
+    margin: 20px;
+}
+
+.w-btn {
+    position: relative;
+    border: none;
+    display: inline-block;
+    padding: 15px 30px;
+    border-radius: 15px;
+    font-family: "paybooc-Light", sans-serif;
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.2);
+    text-decoration: none;
+    font-weight: 600;
+    transition: 0.25s;
+}
+
+.w-btn-outline {
+    position: relative;
+    padding: 15px 30px;
+    border-radius: 15px;
+    font-family: "paybooc-Light", sans-serif;
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.2);
+    text-decoration: none;
+    font-weight: 600;
+    transition: 0.25s;
+}
+
+
+@keyframes gradient1 {
+    0% {
+        background-position: 0% 50%;
+    }
+    50% {
+        background-position: 100% 50%;
+    }
+    100% {
+        background-position: 0% 50%;
+    }
+}
+
+@keyframes gradient2 {
+    0% {
+        background-position: 100% 50%;
+    }
+    50% {
+        background-position: 0% 50%;
+    }
+    100% {
+        background-position: 100% 50%;
+    }
+}
+
+@keyframes ring {
+    0% {
+        width: 30px;
+        height: 30px;
+        opacity: 1;
+    }
+    100% {
+        width: 300px;
+        height: 300px;
+        opacity: 0;
+    }
+}
+
+.w-btn-neon2 {
+    position: relative;
+    border: none;
+    min-width: 200px;
+    min-height: 50px;
+    background: linear-gradient(
+        90deg,
+        rgba(129, 230, 217, 1) 0%,
+        rgba(79, 209, 197, 1) 100%
+    );
+    border-radius: 1000px;
+    color: darkslategray;
+    cursor: pointer;
+    box-shadow: 12px 12px 24px rgba(79, 209, 197, 0.64);
+    font-weight: 700;
+    transition: 0.3s;
+}
+
+.w-btn-neon2:hover {
+    transform: scale(1.2);
+}
+
+.w-btn-neon2:hover::after {
+    content: "";
+    width: 30px;
+    height: 30px;
+    border-radius: 100%;
+    border: 6px solid #00ffcb;
+    position: absolute;
+    z-index: -1;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    animation: ring 1.5s infinite;
+}
+
+
+
+.content {
+  font-family: system-ui, serif;
+  font-size: 2rem;
+  padding: 3rem;
+  border-radius: 1rem;
+  background: #ff6e6c;
+}
+body {
+  margin: 0;
+}
+
+.wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  background: plum;
+}
+
+
+
+
+body, html {
+  font-family: "Raleway", sans-serif;
+  font-size: 0.875rem;
+}
+
+h2 {
+  font-size: 2rem;
+  margin: 0.2em 0;
+}
+
+.cd-switch {
+  padding: 50px 0;
+  text-align: center;
+}
+
+.switchFilter {
+  width: 0;
+  display: inline-block;
+  background-color: #DB6576;
+  position: absolute;
+  left: 0;
+  opacity: 0;
+  top: 0;
+  bottom: 0;
+  z-index: -1;
+  -webkit-transition: all 0.4s cubic-bezier(0, 0, 0.25, 1);
+  -moz-transition: all 0.4s cubic-bezier(0, 0, 0.25, 1);
+  transition: all 0.4s cubic-bezier(0, 0, 0.25, 1);
+}
+
+label {
+  cursor: pointer;
+  text-transform: uppercase;
+  border: 1px solid #3D4349;
+  width: 85px;
+  padding: 15px 0;
+  text-align: center;
+  display: inline-block;
+  -webkit-transition: all 0.4s;
+  -moz-transition: all 0.4s;
+  transition: all 0.4s;
+  margin-right: 10px;
+}
+
+.switch {
+  position: absolute;
+  display: inline-block;
+  left: 50%;
+  right: auto;
+  bottom: 40%;
+  -webkit-transform: translateX(-50%);
+  -moz-transform: translateX(-50%);
+  -ms-transform: translateX(-50%);
+  -o-transform: translateX(-50%);
+  transform: translateX(-50%);
+  z-index: 1;
+  margin: 2em 0;
+}
+.switchUp {
+  position: absolute;
+  display: inline-block;
+  left: 50%;
+  right: auto;
+  -webkit-transform: translateX(-50%);
+  -moz-transform: translateX(-50%);
+  -ms-transform: translateX(-50%);
+  -o-transform: translateX(-50%);
+  transform: translateX(-50%);
+  z-index: 1;
+  margin: 2em 0;
+}
+.switch input[type=radio] {
+  visibility: hidden;
+  position: absolute;
+  height: 100%;
+}
+.switch input[type=radio]#yes:checked ~ label[for=yes] {
+  color: white;
+  border: 1px solid #DB6576;
+}
+.switch input[type=radio]#yes:checked ~ .switchFilter {
+  left: 0;
+  opacity: 1;
+  width: 87px;
+}
+.switch input[type=radio]#no:checked ~ label[for=no] {
+  color: white;
+  border: 1px solid #DB6576;
+}
+.switch input[type=radio]#no:checked ~ .switchFilter {
+  left: 100px;
+  width: 87px;
+  opacity: 1;
+}
+
+
+
+
+
+
+
+input {
+  font-size: 15px;
+  color: #222222;
+  width: 300px;
+  border: none;
+  border-bottom: solid #aaaaaa 1px;
+  padding-bottom: 10px;
+  text-align: center;
+  position: relative;
+  background: none;
+  z-index: 5;
+}
+
+input::placeholder { color: #aaaaaa; }
+input:focus { outline: none; }
+
+span {
+  display: block;
+  position: absolute;
+  bottom: 0;
+  left: 50%;  /* rightë¡œë§Œ ë°”ê¿”ì£¼ë©´ ì˜¤ - ì™¼ */
+  background-color: #666;
+  width: 0;
+  height: 2px;
+  border-radius: 2px;
+  transform: translateX(-50%);
+  transition: 0.5s;
+}
+
+label {
+position: absolute;
+color: #aaa;
+left: 50%;
+transform: translateX(-50%);
+font-size: 20px;
+bottom: 8px;
+transition: all .2s;
+}
+
+input:focus ~ label, input:valid ~ label {
+font-size: 16px;
+bottom: 40px;
+color: #666;
+font-weight: bold;
+}
+
+input:focus ~ span, input:valid ~ span {
+width: 100%;
+}

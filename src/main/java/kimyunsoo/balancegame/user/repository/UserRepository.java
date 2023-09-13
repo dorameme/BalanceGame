@@ -1,6 +1,6 @@
 package kimyunsoo.balancegame.user.repository;
 
-import kimyunsoo.balancegame.user.dto.User;
+import kimyunsoo.balancegame.user.User;
 import org.springframework.data.jpa.repository.JpaRepository;
 
 public interface UserRepository extends JpaRepository<User,Long>

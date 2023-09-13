@@ -1,6 +1,6 @@
 package kimyunsoo.balancegame.user.service;
 
-import kimyunsoo.balancegame.user.dto.User;
+import kimyunsoo.balancegame.user.User;
 import kimyunsoo.balancegame.user.repository.UserRepository;
 import org.springframework.stereotype.Service;
 
@@ -19,12 +19,12 @@ public class UserService {
     public List<User> getUser(){
         return userRepository.findAll();
     }
-    public void updateUser(String name){
-        User user= userRepository.findByName(name);
+    public void updateUser(String name1,String name2){
+        User user= userRepository.findByName(name1);
         if(user==null){
             throw new IllegalArgumentException();
         }
-        user.updateName(name);
+        user.updateName(name2);
         userRepository.save(user);
     }
     

@@ -1,0 +1,36 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Hello</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <link rel="stylesheet" href="../css/main.css"/>
+</head>
+<body>
+<div class="cd-switch">
+
+    <div class="switchUp">
+        <h1>
+            <p th:text="${userName}+'님이 오랜만에 아주아주 꾸미고 밖에 나갔는데...'"><br></p>
+
+        </h1>
+        <h2>
+            <p th:text="${question}"><br></p>
+        </h2>
+
+    </div>
+    <div class="switch">
+        <input type="radio" name="choice" id="yes" checked>
+        <label for="yes">1번</label>
+        <input type="radio" name="choice" id="no">
+        <label for="no">2번</label>
+        <span class="switchFilter"></span>
+    </div>
+</div>
+
+
+
+</body>
+</html>
+
+
+
