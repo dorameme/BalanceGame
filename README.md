@@ -3,7 +3,7 @@
 [![Hits](https://hits.seeyoufarm.com/api/count/incr/badge.svg?url=https%3A%2F%2Fgithub.com%2Fdorameme%2FBalanceGame&count_bg=%23000000&title_bg=%23FF0000&icon=&icon_color=%23FFFDFD&title=hits&edge_flat=false)](https://hits.seeyoufarm.com)
 
 
-개발기간: 2023-9-12 ~ 현재     
+개발기간: 2023-9-12 ~ 9/14     
 배포주소:
 
 목차) 

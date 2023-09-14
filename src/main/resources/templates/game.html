@@ -10,24 +10,41 @@
 
     <div class="switchUp">
         <h1>
-            <p th:text="${userName}+'님이 오랜만에 아주아주 꾸미고 밖에 나갔는데...'"><br></p>
-
+            <p th:text="${userName}+'님의 선택은 !? '"><br></p>
         </h1>
-        <h2>
-            <p th:text="${question}"><br></p>
+        <p th:text="'         원하는 걸 골라봐요 왼쪽? 오른쪽? 결과는 반영됩니다!         '" style=" width: 1000px;"></p>
+
+        <h2 >
+            <p th:text="${question}" style=" width: 1000px;"></p>
         </h2>
 
-    </div>
-    <div class="switch">
-        <input type="radio" name="choice" id="yes" checked>
-        <label for="yes">1번</label>
-        <input type="radio" name="choice" id="no">
-        <label for="no">2번</label>
-        <span class="switchFilter"></span>
+        <html>
+        <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+        <body>
+        <div class="w3-light-grey">
+            <div class="w3-green" th:style="'height:24px;width: ' + ${LeftPercent} + '%'">LEFT</div>
+        </div><br>
+
+        <div class="w3-light-grey">
+            <div class="w3-red" th:style="'height:24px;width: ' + ${RightPercent} + '%'">RIGHT</div>
+
+        </div><br>
+        <div class="w3-container">
+            <div class="w3-bar">
+                <form action="http://localhost:8081/leftQuestion" method="get">
+                <button class="w3-button w3-left w3-light-grey" type="submit" >&laquo; LEFT!</button>
+                </form>
+
+                <form action="http://localhost:8081/rightQuestion" method="get">
+                    <button class="w3-button w3-right w3-green">RIGHT! &raquo;</button>
+                </form>
+            </div>
+        </div>
+
+        </body>
+        </html>
     </div>
 </div>
-
-
 
 </body>
 </html>

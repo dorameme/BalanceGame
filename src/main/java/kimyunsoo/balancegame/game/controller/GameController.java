@@ -27,26 +27,76 @@ public class GameController {
     }
 
     @PostMapping("/user")
-    public RedirectView saveUser(@RequestParam String name, HttpServletRequest request) {
-        userService.saveUser(name);
+    public RedirectView saveUser(@RequestParam String name, Model model,HttpServletRequest request) {
         HttpSession session = request.getSession();
+        if(!userService.saveUser(name)){
+           return new RedirectView("/start2.html");
+        }
         session.setAttribute("userName", name);
         questionService.setId(1L);
-        return new RedirectView("/question");
+        return new RedirectView("/nextQuestion");
     }
 
-    @GetMapping("/question")
-    public String game(Model model, HttpServletRequest request) {
+    @GetMapping("/nextQuestion")
+    public String nextGame(Model model, HttpServletRequest request) {
         // 세션에서 사용자 이름 읽기
         HttpSession session = request.getSession();
         String userName = (String) session.getAttribute("userName");
         // 모델에 사용자 이름 추가
         String Q=questionService.getOneQuestion();
-        log.info("{}",Q);
+
+        model.addAttribute("LeftPercent",questionService.leftPercentage());
+        model.addAttribute("RightPercent",questionService.rightPercentage());
         model.addAttribute("userName", userName);
         model.addAttribute("question",Q);
         return "game"; // 게임 페이지로 이동
     }
+    @GetMapping("/beforeQuestion")
+    public String beforeGame(Model model, HttpServletRequest request) {
+        // 세션에서 사용자 이름 읽기
+        HttpSession session = request.getSession();
+        String userName = (String) session.getAttribute("userName");
+        // 모델에 사용자 이름 추가
+        questionService.setBeforeId();
+        String Q=questionService.getOneQuestion();
+
+        model.addAttribute("LeftPercent",questionService.leftPercentage());
+        model.addAttribute("RightPercent",questionService.rightPercentage());
+        model.addAttribute("userName", userName);
+        model.addAttribute("question",Q);
+        return "game"; // 게임 페이지로 이동
+    }
+
+    @GetMapping("/leftQuestion")
+    public String checkedLeft(Model model, HttpServletRequest request) {
+
+        questionService.updateLeftScore();
+
+        HttpSession session = request.getSession();
+        String userName = (String) session.getAttribute("userName");
+        String Q=questionService.getOneQuestion();
+
+        model.addAttribute("LeftPercent",questionService.leftPercentage());
+        model.addAttribute("RightPercent",questionService.rightPercentage());
+        model.addAttribute("userName", userName);
+        model.addAttribute("question",Q);
+        return "game"; // 게임 페이지로 이동
+    }
+    @GetMapping("/rightQuestion")
+    public String checkedRight(Model model, HttpServletRequest request) {
+        questionService.updateRightScore();
+
+        HttpSession session = request.getSession();
+        String userName = (String) session.getAttribute("userName");
+        String Q=questionService.getOneQuestion();
+
+        model.addAttribute("LeftPercent",questionService.leftPercentage());
+        model.addAttribute("RightPercent",questionService.rightPercentage());
+        model.addAttribute("userName", userName);
+        model.addAttribute("question",Q);
+        return "game"; // 게임 페이지로 이동
+    }
+
 }
 //    }
 //    @GetMapping("/user")

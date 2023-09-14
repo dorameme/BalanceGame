@@ -13,8 +13,10 @@ public class UserService {
         this.userRepository = userRepository;
     }
 
-    public void saveUser(String name){
+    public boolean saveUser(String name){
+        if(userRepository.existsByName(name)){return false;}
         userRepository.save(new User(name));
+        return true;
     }
     public List<User> getUser(){
         return userRepository.findAll();
