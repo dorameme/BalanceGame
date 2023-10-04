@@ -1,4 +1,6 @@
 spring:
+  profiles:
+    active: local
   datasource:
     url: "jdbc:h2:mem:balance;MODE=MYSQL;NON_KEYWORDS=USER"
     username: "sa"
@@ -22,6 +24,7 @@ server:
 
 
 ---
+
 spring:
   profiles:
     active: dev
@@ -38,3 +41,6 @@ spring:
         format_sql: true
         show_sql: true
       dialect: org.hibernate.dialect.MySQL8Dialect
+
+server:
+  port: 8081
